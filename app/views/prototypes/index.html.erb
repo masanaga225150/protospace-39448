@@ -1,0 +1,22 @@
+<main class="main">
+  <div class="inner">
+    <%# ログインしているときは以下を表示する %>
+     <% if user_signed_in? %>
+       <div class="greeting"> 
+        <%= "こんにちは、" %>
+         <%= link_to "#{current_user.name}さん", user_path(current_user), class: :greeting__link%>
+         <%# こんにちは、ユーザー名さんの部分がクリック可能、クリックするとusers/:id/showのURLに遷移し、UsersControllerのshowアクションが呼び出される%>
+      </div>
+      <% else %>
+       <%= link_to "ログイン", new_user_session_path %>
+     <% end %>
+    <%# // ログインしているときは上記を表示する %>
+    <div class="card__wrapper">
+      <%#= card.wrapper%>
+      <%# 投稿機能実装後、部分テンプレートでプロトタイプ投稿一覧を表示する %>
+      <%= render partial: 'prototype', collection: @prototypes %>
+      <%# @prototypesに格納された複数のプロトタイプデータを一覧表示するためのもの%>
+      <%# renderメソッドによって、@prototypesに格納された各プロトタイプデータが_prototype.html.erbという部分テンプレートに渡され、繰り返し描画される。%>
+    </div>
+  </div>
+</main>
