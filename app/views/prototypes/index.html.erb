@@ -7,8 +7,8 @@
          <%= link_to "#{current_user.name}さん", user_path(current_user), class: :greeting__link%>
          <%# こんにちは、ユーザー名さんの部分がクリック可能、クリックするとusers/:id/showのURLに遷移し、UsersControllerのshowアクションが呼び出される%>
       </div>
-      <% else %>
-       <%= link_to "ログイン", new_user_session_path %>
+      <%# else %>
+       <%#= link_to "ログイン", new_user_session_path %>
      <% end %>
     <%# // ログインしているときは上記を表示する %>
     <div class="card__wrapper">
