@@ -16,7 +16,7 @@ class PrototypesController < ApplicationController
     @prototype = Prototype.new(prototype_params)
     # 投稿されたprototypeデータと投稿主のuser_idを関連づけて保存。
     if @prototype.save
-      redirect_to root_path
+      redirect_to root_path # 保存が成功すればroot_pathにリダイレクトする
     else
       # 新規投稿フォームに戻る。
       render :new

@@ -17,6 +17,7 @@
       <%= render partial: 'prototype', collection: @prototypes %>
       <%# @prototypesに格納された複数のプロトタイプデータを一覧表示するためのもの%>
       <%# renderメソッドによって、@prototypesに格納された各プロトタイプデータが_prototype.html.erbという部分テンプレートに渡され、繰り返し描画される。%>
+      <%# collectionメソッドは、ブロック内のコードを繰り返し実行する。%>
     </div>
   </div>
 </main>
