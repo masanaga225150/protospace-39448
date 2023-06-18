@@ -1,11 +1,10 @@
 class CommentsController < ApplicationController
 
   def create
-    @comment = Comment.new(comment_params)
-    if @comment.content.blank? # もし、コメントが空だったら
-      redirect_back(fallback_location: root_path)
-    elsif @comment.save
-      redirect_to prototype_path(@comment.prototype)
+    @comment = Comment.new(comment_params) # @comment = Comment.newというインスタンス変数を生成しておく
+    if @comment.save
+      redirect_to prototype_path(@comment.prototype) # @commentはCommentモデルのインスタンスであり、prototypeという関連付けを持っているため、
+                                                     # @comment.prototypeとすることで、そのコメントが対象となるプロトタイプを取得することができる。
     else
       @prototype = @comment.prototype
       @comments = @prototype.comments

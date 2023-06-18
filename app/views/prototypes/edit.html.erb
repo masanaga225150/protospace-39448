@@ -4,6 +4,7 @@
       <h2 class="page-heading">プロトタイプ編集</h2>
       <%# 部分テンプレートでフォームを表示する _form.html.erbを呼び出す %>
       <%= render partial: "form", locals: { prototype: @prototype } %>
+      <%# formという名前の部分テンプレートを呼び出し、@prototypeインスタンスをprototypeというローカル変数として渡しています。%>
     </div>
   </div>
 </div>
